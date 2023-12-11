@@ -20,9 +20,9 @@ Now open the QT creator and select the directory where the repo is cloned and no
 ### Episode 3
 The Episode 3 is just basic QT with C++(oh I forgot to mention C++ is required for QT)
 lets start with the imports - 
-1. #include <QCoreApplication>
+1. QCoreApplication
    Provides the basic functionality for Qt applications without a graphical user interface (GUI)
-2. #include <QTextStream>
+2. QTextStream
    Provides a convenient way to work with input and output streams
 other are just normal c++ headers.
 
