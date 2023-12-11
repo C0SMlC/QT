@@ -3,6 +3,8 @@
 #include <string>
 #include <QTextStream>
 
+#include <QDebug>
+
 using namespace std;
 
 void do_cpp(){
@@ -25,13 +27,21 @@ void do_QT(){
 
 }
 
+void do_mixed(){
+    QTextStream input(stdin);
+    qInfo()<< "Please enter your name - ";
+    QString name = input.readLine();
+    qInfo()<< "My name is "<<name;
+}
+
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
 //    do_cpp();
 
-    do_QT();
+//    do_QT();
+    do_mixed();
 
     return a.exec();
 }
