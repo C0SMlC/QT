@@ -13,3 +13,7 @@ After setting up QT now clone this repo
 git clone https://github.com/C0SMlC/QT-Development.git
 ```
 Now open the QT creator and select the directory where the repo is cloned and now its your turn to cry :))
+
+## References
+
+1. https://www.youtube.com/playlist?list=PLUbFnGajtZlXbrbdlraCe3LMC_YH5abao
