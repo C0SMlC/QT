@@ -38,9 +38,8 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-//    do_cpp();
-
-//    do_QT();
+    do_cpp();
+    do_QT();
     do_mixed();
 
     return a.exec();
