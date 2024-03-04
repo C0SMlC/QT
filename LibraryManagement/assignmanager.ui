@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AssignManager</class>
+ <widget class="QWidget" name="AssignManager">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>866</width>
+    <height>555</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">color:rgb(31, 13, 14);
+background-color: rgb(85, 85, 127);
+font-weight:700;
+font-size:18px;
+color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QGroupBox" name="formGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>110</y>
+     <width>441</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+padding:15px 10px;
+border:none;</string>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="nameLabel">
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="bookNameLabel">
+      <property name="text">
+       <string>Book Name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QComboBox" name="bookNameComboBox">
+      <property name="styleSheet">
+       <string notr="true">border:1px solid black;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Select</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="countLabel">
+      <property name="text">
+       <string>Count</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="countLineEdit">
+      <property name="styleSheet">
+       <string notr="true">border:1px solid black;</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QComboBox" name="nameComboBox">
+      <property name="styleSheet">
+       <string notr="true">border:1px solid black;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Select</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>390</y>
+     <width>282</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Assign Book</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="bookCountLabel">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>190</y>
+     <width>61</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border:1px solid black;</string>
+   </property>
+   <property name="text">
+    <string>None</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
