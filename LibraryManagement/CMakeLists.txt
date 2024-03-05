@@ -27,6 +27,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         dialog.h dialog.cpp dialog.ui
         assignmanager.h assignmanager.cpp assignmanager.ui
         librarylogs.h librarylogs.cpp librarylogs.ui
+        bookreturndialog.h bookreturndialog.cpp bookreturndialog.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET LibraryManagement APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

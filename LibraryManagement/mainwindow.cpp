@@ -24,8 +24,11 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->addUserButton, &QPushButton::clicked, this, &MainWindow::addUser);
     connect(ui->detailsButton, &QPushButton::clicked, this, &MainWindow::openLogs);
     connect(ui->assignBookButton, &QPushButton::clicked, this, &MainWindow::openAssignWindow);
+    connect(ui->bookReturnButtton, &QPushButton::clicked, this, &MainWindow::openBookReturnWindow);
     connect(&dialog, SIGNAL(updateBookListSignal()), this, SLOT(updateDetails()));
 }
+
+
 
 void MainWindow::handleBookChange(const QString &bookName){
     ui->bookCount->clear();
@@ -35,7 +38,7 @@ void MainWindow::handleBookChange(const QString &bookName){
 
 void MainWindow::openLogs(){
     qDebug() <<"clicked";
-    newLogsWindow = new LibraryLogs(libraryLogs, totalRentedCount);
+    newLogsWindow = new LibraryLogs(libraryLogsMap, totalRentedCount);
     newLogsWindow->setWindowModality(Qt::ApplicationModal);
     newLogsWindow->show();
 }
@@ -81,10 +84,15 @@ void MainWindow::openDialog()
 
 void MainWindow::openAssignWindow()
 {
-    assignBook = new AssignManager(users, bookManager, totalRentedCount, libraryLogs);
+    assignBook = new AssignManager(users, bookManager, totalRentedCount, libraryLogsMap);
     connect(assignBook, &AssignManager::updateCountLabel, this, &MainWindow::updateTotalBookCount);
     assignBook->setWindowModality(Qt::ApplicationModal);
     assignBook->show();
+}
+
+void MainWindow::openBookReturnWindow(){
+    BookReturnDialog *newDialog = new BookReturnDialog(libraryLogsMap, bookManager);
+    newDialog->exec();
 }
 
 MainWindow::~MainWindow()

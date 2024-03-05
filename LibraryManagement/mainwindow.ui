@@ -41,7 +41,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>250</y>
+      <y>210</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -51,7 +51,7 @@ color: rgb(255, 255, 255);</string>
 border-radius:15px;
 background-color: rgb(170, 255, 127);
 color: rgb(0, 0, 0);
-cursor:pointer;</string>
+</string>
     </property>
     <property name="text">
      <string>Update</string>
@@ -67,8 +67,7 @@ cursor:pointer;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">qproperty-alignment: 'AlignCenter';
-background-color: rgb(255, 255, 255);
+     <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);</string>
     </property>
     <property name="editable">
@@ -218,7 +217,7 @@ border:none</string>
 border-radius:15px;
 background-color: rgb(85, 255, 0);
 color: rgb(0, 0, 0);
-cursor:pointer;</string>
+</string>
      </property>
      <property name="text">
       <string>Add</string>
@@ -243,7 +242,7 @@ color: rgb(0, 0, 0);</string>
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>340</y>
+      <y>300</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -253,7 +252,7 @@ color: rgb(0, 0, 0);</string>
 border-radius:15px;
 background-color: rgb(170, 255, 255);
 color: rgb(0, 0, 0);
-cursor:pointer;</string>
+</string>
     </property>
     <property name="text">
      <string>Details</string>
@@ -263,7 +262,7 @@ cursor:pointer;</string>
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>430</y>
+      <y>390</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -272,11 +271,33 @@ cursor:pointer;</string>
      <string notr="true">border: 2px solid black;
 border-radius:15px;
 background-color: rgb(255, 170, 127);
-color: rgb(0, 0, 0);
-cursor:pointer;</string>
+color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Assign</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bookReturnButtton">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>480</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius:15px;
+background-color: #fdffcd;
+color: rgb(0, 0, 0);
+</string>
+    </property>
+    <property name="text">
+     <string>Book Return</string>
     </property>
    </widget>
    <zorder>frame_2</zorder>
@@ -288,6 +309,7 @@ cursor:pointer;</string>
    <zorder>label_2</zorder>
    <zorder>detailsButton</zorder>
    <zorder>assignBookButton</zorder>
+   <zorder>bookReturnButtton</zorder>
   </widget>
  </widget>
  <resources/>
