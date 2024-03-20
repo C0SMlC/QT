@@ -1,0 +1,17 @@
+# ninja log v5
+29	804	7306346952642590	Form_autogen/timestamp	66abf553a6b3cd33
+29	804	7306346952642590	Form_autogen/mocs_compilation.cpp	66abf553a6b3cd33
+29	804	7306346952642590	D:/QT/build-Form-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Form_autogen/timestamp	66abf553a6b3cd33
+29	804	7306346952642590	D:/QT/build-Form-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Form_autogen/mocs_compilation.cpp	66abf553a6b3cd33
+923	10448	7306342800750967	CMakeFiles/Form.dir/mainwindow.cpp.obj	f8e8b4bf11b60040
+5237	12385	7306336235412816	CMakeFiles/Form.dir/main.cpp.obj	681e9af03bfc3b50
+5228	21997	7306336331656926	CMakeFiles/Form.dir/Form_autogen/mocs_compilation.cpp.obj	7ff96849ca7f9b1d
+10449	11004	7306342806162001	Form.exe	d8f7be53709a8df4
+8	2047	7306426808706308	build.ninja	a2c4c70037be542f
+4	1278	7306426808706308	build.ninja	a2c4c70037be542f
+33	520	7306426815340702	Form_autogen/timestamp	66abf553a6b3cd33
+33	520	7306426815340702	Form_autogen/mocs_compilation.cpp	66abf553a6b3cd33
+33	520	7306426815340702	D:/QT/build-Form-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Form_autogen/timestamp	66abf553a6b3cd33
+33	520	7306426815340702	D:/QT/build-Form-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Form_autogen/mocs_compilation.cpp	66abf553a6b3cd33
+534	11598	7306426926122615	CMakeFiles/Form.dir/mainwindow.cpp.obj	f8e8b4bf11b60040
+11599	12590	7306426935936781	Form.exe	d8f7be53709a8df4

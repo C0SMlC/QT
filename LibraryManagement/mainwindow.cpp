@@ -25,10 +25,17 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->detailsButton, &QPushButton::clicked, this, &MainWindow::openLogs);
     connect(ui->assignBookButton, &QPushButton::clicked, this, &MainWindow::openAssignWindow);
     connect(ui->bookReturnButtton, &QPushButton::clicked, this, &MainWindow::openBookReturnWindow);
+    connect(ui->BookDetailsButton, &QPushButton::clicked, this, &MainWindow::openBookDetailsWindow);
     connect(&dialog, SIGNAL(updateBookListSignal()), this, SLOT(updateDetails()));
 }
 
+void MainWindow::openBookDetailsWindow(){
+//    QList<QString> bookTitles = bookManager.getBookTitles("all");
+    newBookDetailsWindow = new BookDetails(bookManager);
+    newBookDetailsWindow->setWindowModality(Qt::ApplicationModal);
+    newBookDetailsWindow->show();
 
+}
 
 void MainWindow::handleBookChange(const QString &bookName){
     ui->bookCount->clear();
@@ -37,7 +44,6 @@ void MainWindow::handleBookChange(const QString &bookName){
 }
 
 void MainWindow::openLogs(){
-    qDebug() <<"clicked";
     newLogsWindow = new LibraryLogs(libraryLogsMap, totalRentedCount);
     newLogsWindow->setWindowModality(Qt::ApplicationModal);
     newLogsWindow->show();
@@ -45,7 +51,6 @@ void MainWindow::openLogs(){
 
 void MainWindow::addUser(){
     QString userName = ui->addUserInput->toPlainText();
-    qDebug() << userName;
 
     if (users.find(userName) != users.end()) {
         QMessageBox::warning(nullptr, "User Already Exists!", "The specified user already exists.");
@@ -60,7 +65,7 @@ void MainWindow::addUser(){
 
 void MainWindow::updateBookListComboBox() {
     ui->BookList->clear();
-    QList<QString> bookTitles = bookManager.getBookTitles();
+    QList<QString> bookTitles = bookManager.getBookTitles("all");
     ui->BookList->addItems(bookTitles);
 }
 
@@ -68,7 +73,6 @@ void MainWindow::updateTotalBookCount() {
     ui->bookCount->clear();
     int bookTotalCount = bookManager.getTotalCount();
     ui->bookCount->setNum(bookTotalCount);
-    qDebug() << "updated the count"<<bookTotalCount;
 }
 
 
@@ -92,6 +96,7 @@ void MainWindow::openAssignWindow()
 
 void MainWindow::openBookReturnWindow(){
     BookReturnDialog *newDialog = new BookReturnDialog(libraryLogsMap, bookManager);
+    connect(newDialog, &BookReturnDialog::updateCountLabel, this, &MainWindow::updateTotalBookCount);
     newDialog->exec();
 }
 

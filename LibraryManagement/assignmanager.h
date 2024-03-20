@@ -21,6 +21,7 @@ public:
 private slots:
     void updateDetails();
     void updateCountLable(const QString &book);
+    void updateBookNameList();
 
 
 signals:
@@ -30,6 +31,7 @@ private:
     Ui::AssignManager *ui;
     std::set<QString> &users;
     BookManager &books;
+    std::string filter = "all";
     std::map<int, std::pair<QString, std::pair<QString, int>>> &libraryLogs;
     int &totalLogsCount;
 };

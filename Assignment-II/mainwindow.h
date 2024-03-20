@@ -2,8 +2,16 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QFileDialog>
+
+#include "DeviceDetails.h"
+//#include "DBService.h"
+
 #include <QMessagebox>
+#include <QPdfWriter>
+#include <QtPrintSupport/QPrinter>
+#include <QtGui/QTextDocument>
+#include <QFileDialog>
+
 
 
 QT_BEGIN_NAMESPACE
@@ -20,8 +28,12 @@ public:
 
 private slots:
     void selectImage();
+    void saveData();
+    void generatePdf();
 
 private:
     Ui::MainWindow *ui;
+    QString fileName;
+    DeviceDetails *currentDevice = nullptr;
 };
 #endif // MAINWINDOW_H

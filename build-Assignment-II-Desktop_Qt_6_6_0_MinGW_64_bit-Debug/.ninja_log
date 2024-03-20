@@ -1,0 +1,24 @@
+# ninja log v5
+107	1854	7326419264632530	Assignment-II_autogen/timestamp	2964145c5dc5c4a8
+2861	12019	7326415194514341	CMakeFiles/Assignment-II.dir/main.cpp.obj	4c89779984b71d2d
+107	1854	7326419264632530	Assignment-II_autogen/mocs_compilation.cpp	2964145c5dc5c4a8
+107	1854	7326419264632530	D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Assignment-II_autogen/timestamp	2964145c5dc5c4a8
+107	1854	7326419264632530	D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Assignment-II_autogen/mocs_compilation.cpp	2964145c5dc5c4a8
+2880	11097	7326415184829076	CMakeFiles/Assignment-II.dir/DeviceDetails.cpp.obj	8aa745af4c7fe456
+2867	12147	7326415195775983	CMakeFiles/Assignment-II.dir/Assignment-II_autogen/mocs_compilation.cpp.obj	9dd8888fe94e04ec
+1880	12072	7326419366860259	CMakeFiles/Assignment-II.dir/mainwindow.cpp.obj	cca151591a63b1ea
+5	77	0	CMakeFiles/clean.additional	baedbe210acaa455
+78	206	0	clean	577b940aee94fbd7
+9	3152	7326420148917932	build.ninja	2f16a39906755e78
+12074	13159	7326419377576607	Assignment-II.exe	36f5aa31d8e6e131
+1889	2201	7326419268134428	CMakeFiles/Assignment-II.dir/services/service.cpp.obj	e379d7414d61637d
+37	2456	7326420165411347	Assignment-II_autogen/timestamp	2964145c5dc5c4a8
+37	2456	7326420165411347	Assignment-II_autogen/mocs_compilation.cpp	2964145c5dc5c4a8
+37	2456	7326420165411347	D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Assignment-II_autogen/timestamp	2964145c5dc5c4a8
+37	2456	7326420165411347	D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Assignment-II_autogen/mocs_compilation.cpp	2964145c5dc5c4a8
+35	2673	7326420445273638	Assignment-II_autogen/timestamp	2964145c5dc5c4a8
+35	2673	7326420445273638	Assignment-II_autogen/mocs_compilation.cpp	2964145c5dc5c4a8
+35	2673	7326420445273638	D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Assignment-II_autogen/timestamp	2964145c5dc5c4a8
+35	2673	7326420445273638	D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Assignment-II_autogen/mocs_compilation.cpp	2964145c5dc5c4a8
+2707	13373	7326420552368071	CMakeFiles/Assignment-II.dir/mainwindow.cpp.obj	cca151591a63b1ea
+13378	14410	7326420562616417	Assignment-II.exe	36f5aa31d8e6e131

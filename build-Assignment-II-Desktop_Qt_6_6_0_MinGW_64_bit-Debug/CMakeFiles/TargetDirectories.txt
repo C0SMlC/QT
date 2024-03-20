@@ -1,0 +1,15 @@
+D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/Assignment-II.dir
+D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
+D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/install.dir
+D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
+D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
+D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/Assignment-II_autogen_timestamp_deps.dir
+D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/Assignment-II_autogen.dir
+D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/services/CMakeFiles/edit_cache.dir
+D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/services/CMakeFiles/rebuild_cache.dir
+D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/services/CMakeFiles/list_install_components.dir
+D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/services/CMakeFiles/install.dir
+D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/services/CMakeFiles/install/local.dir
+D:/QT/build-Assignment-II-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/services/CMakeFiles/install/strip.dir

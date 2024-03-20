@@ -9,6 +9,7 @@
 #include "assignmanager.h"
 #include "librarylogs.h"
 #include "bookreturndialog.h"
+#include "bookdetails.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -33,6 +34,7 @@ private slots:
     void addUser();
     void openLogs();
     void openBookReturnWindow();
+    void openBookDetailsWindow();
 
 public slots:
 
@@ -44,6 +46,7 @@ private:
     std::set<QString> users;
     AssignManager *assignBook;
     int totalRentedCount = 0;
+    BookDetails* newBookDetailsWindow;
     std::map<int, std::pair<QString, std::pair<QString, int>>> libraryLogsMap;
 };
 #endif // MAINWINDOW_H

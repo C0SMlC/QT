@@ -14,22 +14,32 @@ AssignManager::AssignManager(std::set<QString>& userSet, BookManager &bookList, 
 {
     ui->setupUi(this);
     this->setWindowTitle("Rent a book");
-    qDebug() <<"Hiii";
 
     for(auto const &user: users){
-        qDebug() << "jndikn";
         ui->nameComboBox->addItem(user);
 
     }
 
-    ui->bookNameComboBox->addItems(books.getBookTitles());
+    ui->bookNameComboBox->addItems(books.getBookTitles(filter));
     connect(ui->pushButton, &QPushButton::clicked, this, &AssignManager::updateDetails);
     connect(ui->bookNameComboBox, &QComboBox::currentTextChanged, this, &AssignManager::updateCountLable);
+    connect(ui->radioButton, &QRadioButton::toggled, this, &AssignManager::updateBookNameList);
+    connect(ui->radioButton_2, &QRadioButton::toggled, this, &AssignManager::updateBookNameList);
+    connect(ui->radioButton_3, &QRadioButton::toggled, this, &AssignManager::updateBookNameList);
+}
+
+
+void AssignManager::updateBookNameList(){
+     ui->bookNameComboBox->clear();
+
+     if(ui->radioButton_2->isChecked()) filter="technical";
+     if(ui->radioButton_3->isChecked()) filter="nonTechnical";
+
+     ui->bookNameComboBox->addItems(books.getBookTitles(filter));
 }
 
 void AssignManager::updateCountLable(const QString &book){
     ui->bookCountLabel->setNum(books.getBookCount(book));
-    qDebug() << "books.getBookCount(book)"<<books.getBookCount(book);
 }
 
 void AssignManager::updateDetails() {
@@ -42,11 +52,9 @@ void AssignManager::updateDetails() {
         return;
     }
 
-    books.updateBook(bookName, bookCount);
+    books.updateBook(bookName, bookCount, false);
     std::pair<QString, std::pair<QString, int>> logDetails = std::make_pair(bookName, std::make_pair(userName, bookCount));
     libraryLogs[totalLogsCount++] = logDetails;
-    qDebug() << userName << bookName << bookCount << totalLogsCount;
-
     emit updateCountLabel();
     this->close();
 }

@@ -19,10 +19,19 @@ public:
 
 private slots:
     void updateValues(QString const& value);
+    void updateBooksComboBox(const QString& userName);
+    void updateLibrary();
+
+signals:
+    void updateCountLabel();
 
 private:
     std::map<int, std::pair<QString, std::pair<QString, int>>>& libraryLogs;
     BookManager& booksList;
+    int logId;
+    int bookCount;
+    int totalBorrowedCount;
+    QString bookName;
     Ui::BookReturnDialog *ui;
 };
 

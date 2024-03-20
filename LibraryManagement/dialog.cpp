@@ -17,7 +17,15 @@ void Dialog::addBookToMap()
     QString bookTitle = ui->insertBookName->toPlainText();
     int bookCount = (ui->insertBookCount->toPlainText()).toInt();
 
-    bookManager.addBook(bookTitle, bookCount);
+    bool isTechnical = true;
+
+    if(ui->radioButton2->isChecked()){
+        isTechnical = false;
+    }
+
+    qDebug() <<bookTitle<<" "<<isTechnical<<" "<<bookCount;
+
+    bookManager.addBook(bookTitle, bookCount, isTechnical);
     ui->insertBookName->clear();
     ui->insertBookCount->clear();
 
@@ -26,6 +34,14 @@ void Dialog::addBookToMap()
 }
 
 void Dialog::removeBookFromMap(){
+
+    bool isTechnical = true;
+
+    if(ui->radioButton2->isChecked()){
+        isTechnical = false;
+    }
+
+
     QString bookTitle = ui->insertBookName->toPlainText();
     int bookCount = (ui->insertBookCount->toPlainText()).toInt();
 

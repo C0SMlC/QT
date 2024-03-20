@@ -9,8 +9,17 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Assuming you have the MySQL driver pre-built in the following locations
+set(MYSQL_INCLUDE_DIR "C:\Program Files\MySQL\MySQL Server 8.3\include")  # Where MySQL header files are
+set(MYSQL_LIBRARY_DIR "C:\Program Files\MySQL\MySQL Server 8.3\lib")      # Where the MySQL library is located
+
+find_library(MYSQL_LIBRARY mysqlclient PATHS ${MYSQL_LIBRARY_DIR})
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+
+include_directories(${MYSQL_INCLUDE_DIR})
+target_link_libraries(LibraryManagement PRIVATE ${MYSQL_LIBRARY})
+
 
 set(PROJECT_SOURCES
         main.cpp
@@ -28,6 +37,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         assignmanager.h assignmanager.cpp assignmanager.ui
         librarylogs.h librarylogs.cpp librarylogs.ui
         bookreturndialog.h bookreturndialog.cpp bookreturndialog.ui
+        Book.h
+        bookdetails.h bookdetails.cpp bookdetails.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET LibraryManagement APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

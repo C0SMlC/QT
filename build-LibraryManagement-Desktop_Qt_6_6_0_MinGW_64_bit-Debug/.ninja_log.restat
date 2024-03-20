@@ -1,0 +1,17 @@
+# ninja log v5
+26	4356	7318424669187276	D:/QT/build-LibraryManagement-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/LibraryManagement_autogen/timestamp	496929b96c281321
+26	4356	7318424669187276	LibraryManagement_autogen/timestamp	496929b96c281321
+4396	18810	7318424817069275	CMakeFiles/LibraryManagement.dir/librarylogs.cpp.obj	591537700ce65cd0
+4357	19894	7318424827060390	CMakeFiles/LibraryManagement.dir/LibraryManagement_autogen/mocs_compilation.cpp.obj	9d89e67ddd2fdec2
+26	4356	7318424669187276	LibraryManagement_autogen/mocs_compilation.cpp	496929b96c281321
+26	4356	7318424669187276	D:/QT/build-LibraryManagement-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/LibraryManagement_autogen/mocs_compilation.cpp	496929b96c281321
+4377	17493	7318424803644400	CMakeFiles/LibraryManagement.dir/bookmanager.cpp.obj	ba8b751b2fcfc735
+4721	16936	7315833164231997	CMakeFiles/LibraryManagement.dir/main.cpp.obj	ff68e1de64029368
+4367	20473	7318424833660226	CMakeFiles/LibraryManagement.dir/mainwindow.cpp.obj	936eff38d892dc7b
+4383	18323	7318424812118605	CMakeFiles/LibraryManagement.dir/dialog.cpp.obj	dc196e0afa5bb990
+15087	17104	7315836431608683	LibraryManagement.exe	cd532ccb53673ba6
+826	13676	7315836397236835	CMakeFiles/LibraryManagement.dir/assignmanager.cpp.obj	abf4ca9cc13d10d6
+1	124	0	CMakeFiles/clean.additional	baedbe210acaa455
+127	204	0	clean	577b940aee94fbd7
+830	14030	7315836400418932	CMakeFiles/LibraryManagement.dir/bookreturndialog.cpp.obj	35269fcb101c26c1
+807	13693	7315836397418144	CMakeFiles/LibraryManagement.dir/bookdetails.cpp.obj	6e18cbc837d5bfb8
