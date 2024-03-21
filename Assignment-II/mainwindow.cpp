@@ -1,5 +1,4 @@
 #include "mainwindow.h"
-#include "services/service.h"
 #include "./ui_mainwindow.h"
 
 
@@ -30,7 +29,9 @@ void MainWindow::saveData(){
     }
 
     currentDevice = new DeviceDetails(deviceName, deviceSerialNumber, this->fileName.toStdString(), assignee, location);
-    DeviceDetails::insertLog(*currentDevice);
+    connect(this, &MainWindow::updateDetailsLog, currentDevice, &DeviceDetails::insertLogData);
+
+    emit updateDetailsLog(*currentDevice);
 }
 
 void MainWindow::selectImage()
@@ -61,6 +62,7 @@ void MainWindow::generatePdf()
                    "table { border-collapse: collapse; width: 100%; }"
                    "th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }"
                    "th { background-color: #f2f2f2; }"
+                   "img {width: 100px; height: 100px; }"
                    "</style>"
                    "</head>"
                    "<body>"
@@ -69,10 +71,12 @@ void MainWindow::generatePdf()
                    "<tr><th>Property</th><th>Value</th></tr>"
                    "<tr><td>Name</td><td>%1</td></tr>"
                    "<tr><td>Serial Number</td><td>%2</td></tr>"
+                   "<tr><td colspan='2'><img src=%3 style='width: 200px; height: 200px;' /></td></tr>"
                    "</table>"
-                   "<img src=%3 />"
                    "</body>"
                    "</html>";
+
+    qDebug() <<"FileName is "<<currentDevice->getFileName();
 
     html = html.arg(QString::fromStdString(currentDevice->getDeviceName()))
                .arg(QString::fromStdString(currentDevice->getDeviceSerialNumber()))

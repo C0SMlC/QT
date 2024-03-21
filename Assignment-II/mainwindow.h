@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 
-#include "DeviceDetails.h"
+//#include "DeviceDetails.h"
 //#include "DBService.h"
 
 #include <QMessagebox>
@@ -12,7 +12,7 @@
 #include <QtGui/QTextDocument>
 #include <QFileDialog>
 
-
+#include "services/service.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,6 +25,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+signals:
+    void updateDetailsLog(const DeviceDetails& newLog);
 
 private slots:
     void selectImage();

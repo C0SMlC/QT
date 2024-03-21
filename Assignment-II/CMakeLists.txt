@@ -17,8 +17,6 @@ set(PROJECT_SOURCES
     main.cpp
     mainwindow.cpp
     mainwindow.h
-    DeviceDetails.h
-    DeviceDetails.cpp
     mainwindow.ui
 )
 
@@ -34,9 +32,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
   qt_add_executable(Assignment-II
     MANUAL_FINALIZATION
     ${PROJECT_SOURCES}
-    DeviceDetails.h
+
 
     services/service.h services/service.cpp
+
 
   )
 # Define target properties for Android with Qt 6 as:
@@ -54,17 +53,18 @@ else()
     add_executable(Assignment-II
       ${PROJECT_SOURCES}
     )
-
-    target_link_libraries(Assignment-II
-    PRIVATE
-    services)
-
-    target_include_directories(Assignment-II
-    PUBLIC
-    services
-    )
   endif()
 endif()
+
+
+target_link_libraries(Assignment-II
+PRIVATE
+services)
+
+target_include_directories(Assignment-II
+PUBLIC
+services
+)
 
 target_link_libraries(Assignment-II
   PRIVATE Qt::Core Qt::Gui Qt::Widgets Qt::PrintSupport
