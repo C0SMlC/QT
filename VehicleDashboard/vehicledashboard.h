@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QTimer>
 #include "dataprovider.h"
+#include "usersettingsdialog.h"
+#include "vehicleinstrumentpanel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class VehicleDashboard; }
@@ -17,6 +19,11 @@ public:
     VehicleDashboard(QWidget *parent = nullptr);
     ~VehicleDashboard();
 
+private slots:
+    void on_startButton_clicked();
+
+    void on_userSettingsButton_clicked();
+
 private:
     int batteryLevel;
     int totalDistanceTravelled;
@@ -24,6 +31,9 @@ private:
     dataprovider *provider;
     QTimer *vehicleStartedTimer;
     void handleTimeout();
+    bool isVehicleStarted = false;
+    userSettingsDialog *newUserSettingsDialog;
+    VehicleInstrumentPanel *newVehicleInstrumentPanel = nullptr;
 
 };
 #endif // VEHICLEDASHBOARD_H

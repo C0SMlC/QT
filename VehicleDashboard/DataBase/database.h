@@ -16,17 +16,12 @@ private:
     database& operator=(const database&) = delete;
 
 public:
-    static database& instance();
+    static database* getInstance();
     bool createTable();
-    bool updateTotalDistanceTravelled(int distance);
-    bool updateBatteryLevel(int level);
-    bool updateEngineHours(int hours);
-    bool updateEstimatedFuelRange(int range);
-
-    int getTotalDistanceTravelled();
-    int getBatteryLevel();
-    int getEngineHours();
-    int getEstimatedFuelRange();
+    bool addUser(const QString &userName);
+    QVariantMap getUser(const QString &userName);
+    QVariantMap getVehicleInfo();
+    bool updateVehicleInfo(const QString &userName, int totalKms, int batteryLevel, int engineHours);
 };
 
 #endif // DATABASE_H

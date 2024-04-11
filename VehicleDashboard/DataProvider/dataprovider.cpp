@@ -1,38 +1,36 @@
+// dataprovider.cpp
 #include "dataprovider.h"
 
 dataprovider::dataprovider()
-    : db(database::instance())
+    : db(database::getInstance())
 {
 }
 
-bool dataprovider::updateTotalDistanceTravelled(int distance) {
-    return db.updateTotalDistanceTravelled(distance);
+bool dataprovider::addUser(const QString &userName)
+{
+    if (userName.trimmed().isEmpty())
+        return false;
+    return db->addUser(userName);
 }
 
-bool dataprovider::updateBatteryLevel(int level) {
-    return db.updateBatteryLevel(level);
+QVariantMap dataprovider::getUser(const QString &userName)
+{
+    if (userName.trimmed().isEmpty())
+        return QVariantMap();
+
+    return db->getUser(userName);
 }
 
-bool dataprovider::updateEngineHours(int hours) {
-    return db.updateEngineHours(hours);
+bool dataprovider::updateVehicleInfo(const QString &userName, int totalKms, int batteryLevel, int engineHours)
+{
+
+    if (userName.trimmed().isEmpty() || totalKms < 0 || batteryLevel < 0 || engineHours < 0)
+        return false;
+
+    return db->updateVehicleInfo(userName, totalKms, batteryLevel, engineHours);
 }
 
-bool dataprovider::updateEstimatedFuelRange(int range) {
-    return db.updateEstimatedFuelRange(range);
-}
-
-int dataprovider::getTotalDistanceTravelled() {
-    return db.getTotalDistanceTravelled();
-}
-
-int dataprovider::getBatteryLevel() {
-    return db.getBatteryLevel();
-}
-
-int dataprovider::getEngineHours() {
-    return db.getEngineHours();
-}
-
-int dataprovider::getEstimatedFuelRange() {
-    return db.getEstimatedFuelRange();
+QVariantMap dataprovider::getVehicleInfo()
+{
+    return db->getVehicleInfo();
 }

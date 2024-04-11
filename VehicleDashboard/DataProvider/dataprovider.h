@@ -10,18 +10,14 @@ class dataprovider : public QObject
 
 public:
     dataprovider();
-    bool updateTotalDistanceTravelled(int distance);
-    bool updateBatteryLevel(int level);
-    bool updateEngineHours(int hours);
-    bool updateEstimatedFuelRange(int range);
+    bool addUser(const QString &userName);
+    QVariantMap getUser(const QString &userName);
+    bool updateVehicleInfo(const QString &userName, int totalKms, int batteryLevel, int engineHours);
+    QVariantMap getVehicleInfo();
 
-    int getTotalDistanceTravelled();
-    int getBatteryLevel();
-    int getEngineHours();
-    int getEstimatedFuelRange();
 
 private:
-    database& db;
+    database* db;
 };
 
 #endif // DATAPROVIDER_H

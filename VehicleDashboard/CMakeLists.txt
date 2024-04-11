@@ -19,11 +19,18 @@ set(PROJECT_SOURCES
 
 add_subdirectory(DataBase)
 add_subdirectory(DataProvider)
+# add_subdirectory(third-party/QtGauges)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(VehicleDashboard
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        vehicleinstrumentpanel.h vehicleinstrumentpanel.cpp vehicleinstrumentpanel.ui
+        usersettingsdialog.h usersettingsdialog.cpp usersettingsdialog.ui
+        addoperatordialog.h addoperatordialog.cpp addoperatordialog.ui
+        images.qrc
+
+
     )
 else()
     if(ANDROID)
