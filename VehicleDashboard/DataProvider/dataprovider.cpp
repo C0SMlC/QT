@@ -10,13 +10,21 @@ bool dataprovider::addUser(const QString &userName)
 {
     if (userName.trimmed().isEmpty())
         return false;
-    return db->addUser(userName);
+
+    bool isUpdated = db->addUser(userName);
+    // qDebug() << "jwekenkwenk"<<isUpdated;
+
+    if(!isUpdated) {
+        emit usersUpdated();
+        return true;
+    }
+    return false;
 }
 
-QVariantMap dataprovider::getUser(const QString &userName)
+UserModel dataprovider::getUser(const QString &userName)
 {
-    if (userName.trimmed().isEmpty())
-        return QVariantMap();
+    // if (userName.trimmed().isEmpty())
+    //     return QVariantMap();
 
     return db->getUser(userName);
 }
@@ -30,7 +38,23 @@ bool dataprovider::updateVehicleInfo(const QString &userName, int totalKms, int 
     return db->updateVehicleInfo(userName, totalKms, batteryLevel, engineHours);
 }
 
-QVariantMap dataprovider::getVehicleInfo()
+VehicleInfo dataprovider::getVehicleInfo()
 {
     return db->getVehicleInfo();
 }
+
+QVector<UserModel>dataprovider::getAllUsers(){
+    return db->getAllUsers();
+};
+
+bool dataprovider::updateUser(const UserModel& userModel){
+
+    bool isUpdated = db->updateUser(userModel);
+    // qDebug() << "jwekenkwenk"<<isUpdated;
+
+    if(isUpdated) {
+        emit usersUpdated();
+        return true;
+    }
+    return false;
+};

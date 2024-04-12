@@ -10,30 +10,20 @@ VehicleDashboard::VehicleDashboard(QWidget *parent)
     ui->setupUi(this);
     this->setWindowTitle("Start Menu");
 
-    QVariantMap vehicleInfo = provider->getVehicleInfo();
-
-    if (!vehicleInfo.isEmpty()) {
-
-        qDebug() << "Vehicle Information:";
-        qDebug() << "User Name:" << vehicleInfo["user_name"];
-        qDebug() << "Total Kms:" << vehicleInfo["totalKms"].toLongLong();
-        qDebug() << "Battery Level:" << vehicleInfo["batteryLevel"];
-        qDebug() << "Engine Hours:" << vehicleInfo["engineHours"];
-        qDebug() << "User ID:" << vehicleInfo["userId"];
-        qDebug() << "User Mode:" << vehicleInfo["userMode"];
-        qDebug() << "User Color:" << vehicleInfo["userColor"];
-        qDebug() << "User Distance:" << vehicleInfo["userDistance"];
-    } else {
-        qDebug() << "No vehicle information found.";
-    }
 
     vehicleStartedTimer = new QTimer;
     vehicleStartedTimer->setSingleShot(false);
     vehicleStartedTimer->setInterval(5000);
 
     connect(vehicleStartedTimer, &QTimer::timeout, this, &VehicleDashboard::handleTimeout);
+    connect(provider, &dataprovider::usersUpdated, this, &VehicleDashboard::handleUpdates);
 
-//    vehicleStartedTimer->start();
+   // vehicleStartedTimer->start();
+}
+
+void VehicleDashboard::handleUpdates(){
+    qDebug() << "Signal recieved \n";
+    emit updateDetails(provider->getAllUsers());
 }
 
 void VehicleDashboard::handleTimeout(){
@@ -44,8 +34,8 @@ void VehicleDashboard::handleTimeout(){
 
 VehicleDashboard::~VehicleDashboard()
 {
-//    provider->updateBatteryLevel(batteryLevel);
-//    provider->updateTotalDistanceTravelled(totalDistanceTravelled);
+   // provider->updateBatteryLevel(batteryLevel);
+   // provider->updateTotalDistanceTravelled(totalDistanceTravelled);
 
     delete provider;
     delete vehicleStartedTimer;
@@ -56,7 +46,8 @@ VehicleDashboard::~VehicleDashboard()
 void VehicleDashboard::on_startButton_clicked()
 {
     if(!newVehicleInstrumentPanel){
-        newVehicleInstrumentPanel = new VehicleInstrumentPanel;
+        VehicleInfo previosusInfo = provider->getVehicleInfo();
+        newVehicleInstrumentPanel = new VehicleInstrumentPanel(previosusInfo);
         newVehicleInstrumentPanel->show();
     }
 
@@ -74,6 +65,19 @@ void VehicleDashboard::on_startButton_clicked()
 
 void VehicleDashboard::on_userSettingsButton_clicked()
 {
-    newUserSettingsDialog = new userSettingsDialog;
+    QVector<UserModel> users = provider->getAllUsers();
+    newUserSettingsDialog = new userSettingsDialog(users);
     newUserSettingsDialog->show();
+    connect(newUserSettingsDialog, &userSettingsDialog::updateUserInfo, this, &VehicleDashboard::updateUser);
+    connect(newUserSettingsDialog, &userSettingsDialog::addUserToDb, this, &VehicleDashboard::addUserSlot);
+    connect(this, &VehicleDashboard::updateDetails ,newUserSettingsDialog, &userSettingsDialog::renderUserComboBox);
+
+}
+
+void VehicleDashboard::addUserSlot(const QString& userName){
+    provider->addUser(userName);
+}
+
+void VehicleDashboard::updateUser(UserModel user){
+    provider->updateUser(user);
 }

@@ -12,3 +12,10 @@ addOperatorDialog::~addOperatorDialog()
 {
     delete ui;
 }
+
+void addOperatorDialog::on_pushButton_clicked()
+{
+    QString userName = ui->lineEdit->text();
+    emit addUserSignal(userName);
+}
+

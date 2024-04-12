@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(184, 193, 236);</string>
+   <string notr="true"/>
   </property>
   <widget class="QDial" name="dial">
    <property name="geometry">
@@ -64,6 +64,39 @@
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>130</y>
+     <width>341</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true">font: 700 18pt &quot;Segoe UI&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Total Distance Travelled: </string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="styleSheet">
+       <string notr="true">font: 700 16pt &quot;Segoe UI&quot;;</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <zorder>layoutWidget</zorder>
   <zorder>label</zorder>
   <zorder>dial</zorder>
  </widget>

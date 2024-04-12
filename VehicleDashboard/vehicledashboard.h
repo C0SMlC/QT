@@ -7,6 +7,9 @@
 #include "usersettingsdialog.h"
 #include "vehicleinstrumentpanel.h"
 
+#include "models/userModel.h"
+#include "models/vehicleInfoModel.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class VehicleDashboard; }
 QT_END_NAMESPACE
@@ -21,8 +24,10 @@ public:
 
 private slots:
     void on_startButton_clicked();
-
+    void addUserSlot(const QString& userName);
     void on_userSettingsButton_clicked();
+    void handleUpdates();
+    void updateUser(UserModel user);
 
 private:
     int batteryLevel;
@@ -34,6 +39,10 @@ private:
     bool isVehicleStarted = false;
     userSettingsDialog *newUserSettingsDialog;
     VehicleInstrumentPanel *newVehicleInstrumentPanel = nullptr;
+    VehicleInfo* previousInfo;
+
+signals:
+    void updateDetails(QVector<UserModel> users);
 
 };
 #endif // VEHICLEDASHBOARD_H

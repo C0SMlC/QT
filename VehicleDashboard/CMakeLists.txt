@@ -15,11 +15,16 @@ set(PROJECT_SOURCES
     vehicledashboard.cpp
     vehicledashboard.h
     vehicledashboard.ui
+
+    models/userModel.h
+    models/userModel.cpp
+    models/vehicleInfoModel.h
+    models/vehicleInfoModel.cpp
 )
 
 add_subdirectory(DataBase)
 add_subdirectory(DataProvider)
-# add_subdirectory(third-party/QtGauges)
+add_subdirectory(models/)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(VehicleDashboard

@@ -21,10 +21,10 @@ bool database::createTable()
 {
     QSqlQuery query;
     if (!query.exec("CREATE TABLE IF NOT EXISTS user ("
-                    "id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    "user_name TEXT, "
+                    "user_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    "user_name TEXT UNIQUE, "
                     "mode TEXT, "
-                    "color INT, "
+                    "color TEXT, "
                     "distance INT)"))
     {
         qDebug() << query.lastError().text();
@@ -48,17 +48,42 @@ bool database::createTable()
     return true;
 }
 
+bool database::updateUser(const UserModel& userModel) {
+    QSqlQuery query;
+    query.prepare("UPDATE user SET mode = :mode, color = :color, distance = :distance WHERE user_name = :userName");
+    query.bindValue(":mode", userModel.getMode());
+    query.bindValue(":color", userModel.getColor());
+    query.bindValue(":distance", userModel.getDistance());
+    query.bindValue(":userName", userModel.getUserName());
+
+    if (!query.exec()) {
+        qDebug() << "Error updating user: " << query.lastError().text();
+        return false;
+    }
+
+    qDebug() << "User updated successfully.";
+    return true;
+}
+
 bool database::addUser(const QString &userName) {
     QSqlQuery query;
+
+    qDebug() << userName;
+
     query.prepare("INSERT INTO user(user_name, mode, color, distance) VALUES (:user_name, :mode, :color, :distance)");
     query.bindValue(":user_name", userName);
     query.bindValue(":mode", "default");
     query.bindValue(":color", "default");
     query.bindValue(":distance", 0);
+
+    if(!query.exec()){
+        qDebug() <<"Error is "<<query.lastError().text();
+    }
+
     return query.exec();
 }
 
-QVariantMap database::getUser(const QString &userName) {
+UserModel database::getUser(const QString &userName) {
     QSqlQuery query;
     query.prepare("SELECT * FROM user WHERE user_name = :userName");
     query.bindValue(":userName", userName);
@@ -66,13 +91,10 @@ QVariantMap database::getUser(const QString &userName) {
 
     QVariantMap userInfo;
     if (query.next()) {
-        userInfo["id"] = query.value("id");
-        userInfo["mode"] = query.value("mode");
-        userInfo["color"] = query.value("color");
-        userInfo["distance"] = query.value("distance");
+        user = new UserModel(query.value("id").toInt(), query.value("user_name").toString(), query.value("mode").toString(), query.value("color").toString(), query.value("distance").toInt());
     }
 
-    return userInfo;
+    return *user;
 }
 
 bool database::updateVehicleInfo(const QString &userName, int totalKms, int batteryLevel, int engineHours) {
@@ -88,29 +110,53 @@ bool database::updateVehicleInfo(const QString &userName, int totalKms, int batt
 }
 
 
-QVariantMap database::getVehicleInfo() {
+VehicleInfo database::getVehicleInfo() {
     QSqlQuery query;
     query.prepare("SELECT v.*, u.* "
                   "FROM vehicleInfo v "
-                  "JOIN user u ON v.user_name = u.user_name "
-                  );
-    query.exec();
+                  "JOIN user u ON v.user_name = u.user_name ");
+    qDebug()<< query.exec();
 
-    QVariantMap vehicleInfo;
-    if (query.next()) {
-        vehicleInfo["id"] = query.value("id");
-        vehicleInfo["user_name"] = query.value("user_name");
-        vehicleInfo["totalKms"] = query.value("totalKms");
-        vehicleInfo["batteryLevel"] = query.value("batteryLevel");
-        vehicleInfo["engineHours"] = query.value("engineHours");
-        vehicleInfo["userId"] = query.value("id");
-        vehicleInfo["userMode"] = query.value("mode");
-        vehicleInfo["userColor"] = query.value("color");
-        vehicleInfo["userDistance"] = query.value("distance");
+     QSqlQuery query2;
+    if (!query2.exec("SELECT v.*, u.* FROM vehicleInfo v JOIN user u ON v.user_name = u.user_name ")) {
+        qDebug() << "Error executing query: " << query2.lastError();
     }
 
-    return vehicleInfo;
+
+    if (query.next()) {
+         vehicle = new VehicleInfo(
+            query.value("id").toInt(),
+            query.value("user_name").toString(),
+            query.value("totalKms").toInt(),
+            query.value("batteryLevel").toInt(),
+            query.value("engineHours").toInt(),
+            query.value("user_id").toInt(),
+            query.value("mode").toString(),
+            query.value("color").toString(),
+            query.value("distance").toInt()
+            );
+    }
+    return *vehicle;
 }
+
+QVector<UserModel> database::getAllUsers() {
+    QVector<UserModel> allUsers; // A vector to store the retrieved User objects
+    QSqlQuery query;
+
+    if (query.exec("SELECT * FROM user")) {
+        while (query.next()) {
+            UserModel user(query.value("user_id").toInt(), query.value("user_name").toString(), query.value("mode").toString(), query.value("color").toString(), query.value("distance").toInt());
+            allUsers.append(user);
+        }
+    } else {
+        qDebug() << "Error retrieving users: " << query.lastError();
+    }
+
+    qDebug() << allUsers.size();
+
+    return allUsers;
+}
+
 
 
 
