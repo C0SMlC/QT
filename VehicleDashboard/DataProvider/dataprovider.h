@@ -12,10 +12,11 @@ public:
     dataprovider();
     bool addUser(const QString &userName);
     UserModel getUser(const QString &userName);
-    bool updateVehicleInfo(const QString &userName, int totalKms, int batteryLevel, int engineHours);
+    bool updateVehicleInfo(const QString &userName, int totalKms, int batteryLevel, int engineHours, int fuelLeft);
     VehicleInfo getVehicleInfo();
     QVector<UserModel> getAllUsers();
     bool updateUser(const UserModel& userModel);
+    bool updateLastUserWithoutStart(QString userName);
 
 private:
     database* db;

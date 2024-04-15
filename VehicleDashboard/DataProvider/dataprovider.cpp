@@ -29,13 +29,13 @@ UserModel dataprovider::getUser(const QString &userName)
     return db->getUser(userName);
 }
 
-bool dataprovider::updateVehicleInfo(const QString &userName, int totalKms, int batteryLevel, int engineHours)
+bool dataprovider::updateVehicleInfo(const QString &userName, int totalKms, int batteryLevel, int engineHours, int fuelLeft)
 {
 
-    if (userName.trimmed().isEmpty() || totalKms < 0 || batteryLevel < 0 || engineHours < 0)
+    if (userName.trimmed().isEmpty() || totalKms < 0 || batteryLevel < 0 || engineHours < 0 || fuelLeft<0)
         return false;
 
-    return db->updateVehicleInfo(userName, totalKms, batteryLevel, engineHours);
+    return db->updateVehicleInfo(userName, totalKms, batteryLevel, engineHours, fuelLeft);
 }
 
 VehicleInfo dataprovider::getVehicleInfo()
@@ -58,3 +58,7 @@ bool dataprovider::updateUser(const UserModel& userModel){
     }
     return false;
 };
+
+bool dataprovider::updateLastUserWithoutStart(QString userName){
+    return db->updateLastUserWithoutStart(userName);
+}

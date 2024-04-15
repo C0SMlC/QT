@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/images">
         <file>assets/speedometer.png</file>
+        <file>assets/left.png</file>
+        <file>assets/right.png</file>
     </qresource>
 </RCC>

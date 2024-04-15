@@ -5,7 +5,7 @@
 
 class VehicleInfo {
 public:
-    VehicleInfo(int id, const QString &userName, int totalKms, int batteryLevel,
+    VehicleInfo(int id, const QString &userName, int totalKms, int batteryLevel, int fuelLeft,
                 int engineHours, int userId, const QString &userMode,
                 QString userColor, int userDistance);
 
@@ -18,6 +18,7 @@ public:
     const QString &getUserMode() const;
     QString getUserColor() const;
     int getUserDistance() const;
+    int getFuelLeft() const;
 
 private:
     int id;
@@ -29,6 +30,7 @@ private:
     QString userMode;
     QString userColor;
     int userDistance;
+    int fuelLeft;
 };
 
 #endif // VEHICLEINFO_H

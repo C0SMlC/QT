@@ -19,8 +19,8 @@
   <widget class="QDial" name="dial">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>380</y>
+     <x>400</x>
+     <y>350</y>
      <width>121</width>
      <height>121</height>
     </rect>
@@ -38,8 +38,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>270</y>
+     <x>310</x>
+     <y>240</y>
      <width>311</width>
      <height>311</height>
     </rect>
@@ -64,41 +64,223 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QLCDNumber" name="lcdNumber">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>130</y>
-     <width>341</width>
-     <height>34</height>
+     <x>440</x>
+     <y>480</y>
+     <width>61</width>
+     <height>41</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
+  </widget>
+  <widget class="QLCDNumber" name="batteryLabel">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>110</y>
+     <width>81</width>
+     <height>71</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>120</y>
+     <width>185</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 18pt &quot;Segoe UI&quot;;
+margin-left:10px;</string>
+   </property>
+   <property name="text">
+    <string>Battery Level:</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>640</y>
+     <width>331</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
     <item>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="label_4">
       <property name="styleSheet">
        <string notr="true">font: 700 18pt &quot;Segoe UI&quot;;</string>
       </property>
       <property name="text">
-       <string>Total Distance Travelled: </string>
+       <string>Engine Hours :</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="label_3">
-      <property name="styleSheet">
-       <string notr="true">font: 700 16pt &quot;Segoe UI&quot;;</string>
-      </property>
+     <widget class="QLCDNumber" name="engineHours"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>120</y>
+     <width>291</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 18pt &quot;Segoe UI&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Total Distance Travelled: </string>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="distanceLabel">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>110</y>
+     <width>81</width>
+     <height>71</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>90</y>
+     <width>771</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid black;</string>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progressBar">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>330</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="leftIndicatorLabel">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>470</y>
+     <width>121</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="images.qrc">:/images/assets/left.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="leftLabel_2">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>500</y>
+     <width>81</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="rightIndicatorLabel">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>480</y>
+     <width>121</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="images.qrc">:/images/assets/right.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>580</y>
+     <width>168</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="pushButton">
       <property name="text">
-       <string>0</string>
+       <string>Left</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="text">
+       <string>Right</string>
       </property>
      </widget>
     </item>
    </layout>
   </widget>
+  <zorder>groupBox</zorder>
   <zorder>layoutWidget</zorder>
   <zorder>label</zorder>
   <zorder>dial</zorder>
+  <zorder>lcdNumber</zorder>
+  <zorder>layoutWidget_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>batteryLabel</zorder>
+  <zorder>label_2</zorder>
+  <zorder>distanceLabel</zorder>
+  <zorder>progressBar</zorder>
+  <zorder>leftIndicatorLabel</zorder>
+  <zorder>leftLabel_2</zorder>
+  <zorder>rightIndicatorLabel</zorder>
  </widget>
  <resources>
   <include location="images.qrc"/>

@@ -1,6 +1,6 @@
 #include "vehicleInfoModel.h"
 
-VehicleInfo::VehicleInfo(int id, const QString &userName, int totalKms, int batteryLevel,
+VehicleInfo::VehicleInfo(int id, const QString &userName, int totalKms, int batteryLevel,int fuelLeft,
                          int engineHours, int userId, const QString &userMode,
                          QString userColor, int userDistance) :
     id(id),
@@ -11,7 +11,8 @@ VehicleInfo::VehicleInfo(int id, const QString &userName, int totalKms, int batt
     userId(userId),
     userMode(userMode),
     userColor(userColor),
-    userDistance(userDistance)
+    userDistance(userDistance),
+    fuelLeft(fuelLeft)
 {
 }
 
@@ -49,4 +50,9 @@ QString VehicleInfo::getUserColor() const {
 
 int VehicleInfo::getUserDistance() const {
     return userDistance;
+}
+
+
+int VehicleInfo::getFuelLeft() const {
+    return fuelLeft;
 }

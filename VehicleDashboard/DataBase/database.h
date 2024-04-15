@@ -27,7 +27,8 @@ public:
     UserModel getUser(const QString &userName);
     VehicleInfo getVehicleInfo();
     bool updateUser(const UserModel& userModel);
-    bool updateVehicleInfo(const QString &userName, int totalKms, int batteryLevel, int engineHours);
+    bool updateVehicleInfo(const QString &userName, int totalKms, int batteryLevel, int engineHours, int fuelLeft);
+    bool updateLastUserWithoutStart(QString username);
     QVector<UserModel> getAllUsers();
 };
 

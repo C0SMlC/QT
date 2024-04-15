@@ -1,7 +1,7 @@
 #include "database.h"
 
 database* database::getInstance() {
-     database* _instance = new database;
+     static database* _instance = new database;
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("VehicleDashboard.db");
@@ -38,6 +38,7 @@ bool database::createTable()
                     "totalKms INT, "
                     "batteryLevel INT, "
                     "engineHours INT, "
+                    "fuelLeft INT,"
                     "FOREIGN KEY (user_name) REFERENCES user (user_name))"))
     {
         qDebug() << query.lastError().text();
@@ -83,6 +84,15 @@ bool database::addUser(const QString &userName) {
     return query.exec();
 }
 
+bool database::updateLastUserWithoutStart(QString userName){
+    QSqlQuery query;
+    query.prepare("UPDATE vehicleInfo "
+                  "SET user_name = :user_name "
+                  "WHERE id = 1");
+    query.bindValue(":user_name", userName);
+    return query.exec();
+};
+
 UserModel database::getUser(const QString &userName) {
     QSqlQuery query;
     query.prepare("SELECT * FROM user WHERE user_name = :userName");
@@ -97,15 +107,16 @@ UserModel database::getUser(const QString &userName) {
     return *user;
 }
 
-bool database::updateVehicleInfo(const QString &userName, int totalKms, int batteryLevel, int engineHours) {
+bool database::updateVehicleInfo(const QString &userName, int totalKms, int batteryLevel, int engineHours, int fuelLeft) {
     QSqlQuery query;
     query.prepare("UPDATE vehicleInfo "
-                  "SET totalKms = :totalKms, batteryLevel = :batteryLevel, engineHours = :engineHours "
+                  "SET totalKms = :totalKms, batteryLevel = :batteryLevel, engineHours = :engineHours, fuelLeft= :fuelLeft "
                   "WHERE user_name = :user_name");
     query.bindValue(":user_name", userName);
     query.bindValue(":totalKms", totalKms);
     query.bindValue(":batteryLevel", batteryLevel);
     query.bindValue(":engineHours", engineHours);
+    query.bindValue(":fuelLeft", fuelLeft);
     return query.exec();
 }
 
@@ -129,6 +140,7 @@ VehicleInfo database::getVehicleInfo() {
             query.value("user_name").toString(),
             query.value("totalKms").toInt(),
             query.value("batteryLevel").toInt(),
+            query.value("fuelLeft").toInt(),
             query.value("engineHours").toInt(),
             query.value("user_id").toInt(),
             query.value("mode").toString(),

@@ -28,9 +28,15 @@ private slots:
     void on_userSettingsButton_clicked();
     void handleUpdates();
     void updateUser(UserModel user);
+    void onVehicleInstrumentPanelClosed();
+    void updateLastUser(const QString &userName, int totalKms, int batteryLevel, int engineHours, int fuelLeft);
+    void updateLastUserWithoutStart(QString username);
+    void updateLastUserDetails(int distanceTravelled,int batteryLevel, int engineHours, int fuelLeft);
+    void on_pushButton_3_clicked();
 
 private:
     int batteryLevel;
+    QString lastUserName;
     int totalDistanceTravelled;
     Ui::VehicleDashboard *ui;
     dataprovider *provider;
@@ -41,8 +47,13 @@ private:
     VehicleInstrumentPanel *newVehicleInstrumentPanel = nullptr;
     VehicleInfo* previousInfo;
 
+
 signals:
     void updateDetails(QVector<UserModel> users);
+    void updateInstrumentalPanel(UserModel user);
+    void getTotalValuesAndUpdateDB();
+    void updateComboBox(VehicleInfo updatedValues);
+    void updateResetValues();
 
 };
 #endif // VEHICLEDASHBOARD_H
