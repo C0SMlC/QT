@@ -20,7 +20,7 @@ public:
     int getUserDistance() const;
     int getFuelLeft() const;
 
-private:
+// private:
     int id;
     QString userName;
     int totalKms;

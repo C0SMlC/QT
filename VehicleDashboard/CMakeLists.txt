@@ -25,6 +25,9 @@ set(PROJECT_SOURCES
 add_subdirectory(DataBase)
 add_subdirectory(DataProvider)
 add_subdirectory(models/)
+add_subdirectory(googletest/)
+add_subdirectory(googlemock/)
+add_subdirectory(tests/)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(VehicleDashboard
@@ -34,6 +37,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         usersettingsdialog.h usersettingsdialog.cpp usersettingsdialog.ui
         addoperatordialog.h addoperatordialog.cpp addoperatordialog.ui
         images.qrc
+        tests/dataProviderClassTests.cpp
 
 
     )
@@ -52,6 +56,8 @@ endif()
 target_include_directories(VehicleDashboard PUBLIC
 DataBase/
 DataProvider/
+googletest/
+googlemock/
 )
 
 target_link_libraries(VehicleDashboard PRIVATE
@@ -59,6 +65,8 @@ target_link_libraries(VehicleDashboard PRIVATE
     dataprovider
     Qt${QT_VERSION_MAJOR}::Widgets
     Qt${QT_VERSION_MAJOR}::Sql
+    gtest
+    gmock
 )
 
 

@@ -21,7 +21,7 @@ public:
     void setColor(QString color);
     void setDistance(int distance);
 
-private:
+// private:
     int id;
     QString userName;
     QString mode;

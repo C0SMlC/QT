@@ -14,10 +14,11 @@ bool dataprovider::addUser(const QString &userName)
     bool isUpdated = db->addUser(userName);
     // qDebug() << "jwekenkwenk"<<isUpdated;
 
-    if(!isUpdated) {
+    if(isUpdated) {
         emit usersUpdated();
         return true;
     }
+
     return false;
 }
 
