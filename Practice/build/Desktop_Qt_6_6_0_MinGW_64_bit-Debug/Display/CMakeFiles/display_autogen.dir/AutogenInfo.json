@@ -1,0 +1,84 @@
+{
+	"BUILD_DIR" : "D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Display/display_autogen",
+	"CMAKE_BINARY_DIR" : "D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Display",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/QT/Practice/Display",
+	"CMAKE_EXECUTABLE" : "C:/Qt/Tools/CMake_64/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"D:/QT/Practice/Display/CMakeLists.txt",
+		"D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "D:/QT/Practice",
+	"DEP_FILE" : "D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Display/display_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "display_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"D:/QT/Practice/Display/display.h",
+			"MU",
+			"EWIEGA46WW/moc_display.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Display/display_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Display/display_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "display_EXPORTS" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"D:/QT/Practice/Display",
+		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++",
+		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32",
+		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward",
+		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include",
+		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed",
+		"C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"C:/Qt/Tools/mingw1120_64/bin/g++.exe",
+		"-std=gnu++17",
+		"-dM",
+		"-E",
+		"-c",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Display/display_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 2,
+	"PARSE_CACHE_FILE" : "D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Display/CMakeFiles/display_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "C:/Qt/6.6.0/mingw_64/./bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 6,
+	"SETTINGS_FILE" : "D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Display/CMakeFiles/display_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "D:/QT/Practice/Display/display.cpp", "MU", null ]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}
