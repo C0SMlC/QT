@@ -7,7 +7,29 @@
 	"CMAKE_LIST_FILES" : 
 	[
 		"D:/QT/Practice/Display/CMakeLists.txt",
-		"D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake"
+		"D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/Qt6Config.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/Qt6Targets.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/Qt6VersionlessTargets.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/QtFeature.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/QtFeatureCommon.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CheckCXXCompilerFlag.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/QtPublicTestHelpers.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/QtPublicToolHelpers.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "D:/QT/Practice",
 	"DEP_FILE" : "D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Display/display_autogen/deps",
@@ -15,16 +37,27 @@
 	"HEADERS" : 
 	[
 		[
-			"D:/QT/Practice/Display/display.h",
+			"D:/QT/Practice/Display/newdisplay.h",
 			"MU",
-			"EWIEGA46WW/moc_display.cpp",
+			"EWIEGA46WW/moc_newdisplay.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Display/display_autogen/include",
 	"MOC_COMPILATION_FILE" : "D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Display/display_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "display_EXPORTS" ],
+	"MOC_DEFINITIONS" : 
+	[
+		"MINGW_HAS_SECURE_API=1",
+		"QT_CORE_LIB",
+		"UNICODE",
+		"WIN32",
+		"WIN64",
+		"_ENABLE_EXTENDED_ALIGNED_STORAGE",
+		"_UNICODE",
+		"_WIN64",
+		"display_EXPORTS"
+	],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -34,7 +67,9 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"D:/QT/Practice/Display",
+		"C:/Qt/6.6.0/mingw_64/include/QtCore",
+		"C:/Qt/6.6.0/mingw_64/include",
+		"C:/Qt/6.6.0/mingw_64/mkspecs/win32-g++",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward",
@@ -74,7 +109,7 @@
 	"SETTINGS_FILE" : "D:/QT/Practice/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Display/CMakeFiles/display_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "D:/QT/Practice/Display/display.cpp", "MU", null ]
+		[ "D:/QT/Practice/Display/newdisplay.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

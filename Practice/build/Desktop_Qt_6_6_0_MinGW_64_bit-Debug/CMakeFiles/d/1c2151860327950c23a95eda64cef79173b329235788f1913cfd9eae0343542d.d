@@ -47,6 +47,14 @@ Practice_autogen/timestamp: \
   C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets-relwithdebinfo.cmake \
   C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake \
   C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateVersionlessTargets.cmake \
+  C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6Test/Qt6TestAdditionalTargetInfo.cmake \
+  C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6Test/Qt6TestConfig.cmake \
+  C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6Test/Qt6TestConfigVersion.cmake \
+  C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6Test/Qt6TestConfigVersionImpl.cmake \
+  C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6Test/Qt6TestDependencies.cmake \
+  C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6Test/Qt6TestTargets-relwithdebinfo.cmake \
+  C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6Test/Qt6TestTargets.cmake \
+  C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6Test/Qt6TestVersionlessTargets.cmake \
   C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateAdditionalTargetInfo.cmake \
   C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfig.cmake \
   C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersion.cmake \

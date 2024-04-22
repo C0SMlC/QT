@@ -1,27 +1,25 @@
 #include "gtest/gtest.h"
 #include "SumService/sum.h"
 #include "SumMock.h"
+#include <QSignalSpy>
 
 using namespace::testing;
 
-class SumProvider:public ::testing::Test{
+class interfaceClass:public ::testing::Test{
 protected:
-    void SetUp() override {
-        dsptr = new DisplayMockClass;
-        newObj = new Sum(dsptr);
+    interfaceClass(){
+        displayPtr = new DisplayMockClass;
+        sumPtr = new Sum(displayPtr);
+    }
+    ~interfaceClass(){
+        delete sumPtr;
     }
 
-    void TearDown() override {
-        delete newObj;
-        delete dsptr;
-    }
-
-    Sum* newObj;
-    DisplayMockClass *dsptr;
-
+    DisplayMockClass* displayPtr;
+    Sum* sumPtr;
 };
 
-TEST_F(SumProvider, WhenTwoValuesArePassedToGetSumThenReturnSum){
-    EXPECT_CALL(*dsptr,display(10)).Times(1);
-    EXPECT_EQ(30, newObj->getSum(10, 20));
+TEST_F(interfaceClass, whenejwkjthennjksjdks){
+    EXPECT_CALL(*displayPtr, display(10)).Times(1);
+    EXPECT_EQ(30, sumPtr->getSum(10, 20));
 }

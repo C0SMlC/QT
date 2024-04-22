@@ -1,15 +1,15 @@
 #ifndef SUM_H
 #define SUM_H
 
-#include "display.h"
+#include "newdisplay.h"
 
 class Sum
 {
 private:
-    Display* dsptr;
+    newDisplay* dsptr;
 
 public:
-    Sum(Display* dsptr);
+    Sum(newDisplay* dsptr);
     int getSum(int x, int y);
     bool getStatus();
 };

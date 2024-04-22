@@ -1,10 +1,13 @@
 project(Display LANGUAGES CXX)
 
+find_package(QT NAMES Qt6 COMPONENTS Core REQUIRED)
+
+include_directories(${Qt6_INCLUDE_DIRS})
+
 add_library(display SHARED
-    display.cpp
-    display.h
+
+
+  newdisplay.h newdisplay.cpp
 )
 
-target_include_directories(display PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}
-)
+target_link_libraries(display PRIVATE Qt6::Core)

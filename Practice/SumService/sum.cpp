@@ -1,6 +1,6 @@
 #include "sum.h"
 
-Sum::Sum(Display* dsptr):dsptr(dsptr) {
+Sum::Sum(newDisplay* dsptr):dsptr(dsptr) {
 
 }
 
