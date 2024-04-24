@@ -1,0 +1,125 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-2fb205926c44b726fcb3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "Models",
+					"jsonFile" : "directory-Models-Debug-86b32ee6a81dc9245fcb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Models",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "VehicleHealthMonitorSystem",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "Models::@6005cbd7e229a64c4d31",
+					"jsonFile" : "target-Models-Debug-cee989c78e8be703517f.json",
+					"name" : "Models",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Models_autogen::@6005cbd7e229a64c4d31",
+					"jsonFile" : "target-Models_autogen-Debug-3396e58b568d01e48099.json",
+					"name" : "Models_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Models_autogen_timestamp_deps::@6005cbd7e229a64c4d31",
+					"jsonFile" : "target-Models_autogen_timestamp_deps-Debug-a54fa406dba1c57c004e.json",
+					"name" : "Models_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "VehicleHealthMonitorSystem::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-VehicleHealthMonitorSystem-Debug-a46ca72fef8727058de1.json",
+					"name" : "VehicleHealthMonitorSystem",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "VehicleHealthMonitorSystem_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-VehicleHealthMonitorSystem_autogen-Debug-b01095c1fe33a0615895.json",
+					"name" : "VehicleHealthMonitorSystem_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "VehicleHealthMonitorSystem_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-VehicleHealthMonitorSystem_autogen_timestamp_deps-Debug-2cdaa955e3b6bc5d84a4.json",
+					"name" : "VehicleHealthMonitorSystem_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/QT/VehicleHealthMonitorSystem/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug",
+		"source" : "D:/QT/VehicleHealthMonitorSystem"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
