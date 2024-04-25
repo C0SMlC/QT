@@ -1,5 +1,6 @@
 VehicleHealthMonitorSystem_autogen/timestamp: \
   C:/Qt/6.6.0/mingw_64/include/QtCore/QDate \
+  C:/Qt/6.6.0/mingw_64/include/QtCore/QDebug \
   C:/Qt/6.6.0/mingw_64/include/QtCore/QObject \
   C:/Qt/6.6.0/mingw_64/include/QtCore/QTimer \
   C:/Qt/6.6.0/mingw_64/include/QtCore/q20functional.h \

@@ -1,6 +1,7 @@
 D:/QT/VehicleHealthMonitorSystem/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/VehicleHealthMonitorSystem_autogen/EWIEGA46WW/moc_mainwindow.cpp: D:/QT/VehicleHealthMonitorSystem/mainwindow.h \
   D:/QT/VehicleHealthMonitorSystem/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/VehicleHealthMonitorSystem_autogen/moc_predefs.h \
   C:/Qt/6.6.0/mingw_64/include/QtCore/QDate \
+  C:/Qt/6.6.0/mingw_64/include/QtCore/QDebug \
   C:/Qt/6.6.0/mingw_64/include/QtCore/QObject \
   C:/Qt/6.6.0/mingw_64/include/QtCore/QTimer \
   C:/Qt/6.6.0/mingw_64/include/QtCore/q20functional.h \

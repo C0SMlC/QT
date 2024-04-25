@@ -1,16 +1,51 @@
 #include "filtermodel.h"
 
-FilterModel::FilterModel() {
-    filterList = {"Engine Air Filter", "Cabin Air Filter", "Oil Filter", "Fuel Filter"};
+QList<FilterModel> FilterModel::filterList;
+
+FilterModel::FilterModel(QString name, int healthLevel):name(name), healthLevel(healthLevel){
+
 }
 
-QList<QString> FilterModel::getFilterList(){
+QList<FilterModel> FilterModel::getFilterList(){
     return filterList;
 }
 
-QList<QString> FilterModel::setFilterList(QString newFilter){
-    if(!filterList.contains(newFilter)){
-        filterList.append(newFilter);
+QString FilterModel::getFilterName() const {
+    return this->name;
+}
+
+int FilterModel::getFilterHealth() const {
+    return this->healthLevel;
+}
+
+FilterModel FilterModel::setFilterHealth(int num) {
+    if(this->healthLevel - num > 0) {
+        this->healthLevel =  this->healthLevel - num;
     }
+
+    qDebug() << this->healthLevel;
+    return *this;
+}
+
+QList<FilterModel> FilterModel::addFilterToList(const FilterModel& newFilter){
+    for(const auto& filter: filterList){
+        if(filter.name == newFilter.name) return filterList;
+    }
+
+    filterList.append(newFilter);
     return filterList;
+}
+
+FilterModel::FilterModel(const FilterModel& other)
+    :healthLevel(other.healthLevel), name(other.name)
+{
+}
+
+FilterModel& FilterModel::operator=(const FilterModel& other)
+{
+    if (this != &other) {
+        healthLevel = other.healthLevel;
+        name = other.name;
+    }
+    return *this;
 }

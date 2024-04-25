@@ -23,11 +23,15 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_radioButton_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
-    void loadFilter();
+    void load(QString type);
     void loadStatus(int row, int count, QString status);
-
+    void handleValueChange();
+    QTimer *timer;
     int count = 100;
 };
 #endif // MAINWINDOW_H

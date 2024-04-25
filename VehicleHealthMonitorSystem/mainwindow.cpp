@@ -1,43 +1,41 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
+void loadDefaults(){
+    QList<QString> filterList = {"Engine Air Filter", "Cabin Air Filter", "Oil Filter", "Fuel Filter"};
+    for(const auto& filter : filterList){
+        FilterModel newFilter(filter);
+        FilterModel::addFilterToList(newFilter);
+    }
+}
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    // Set the background color for the horizontal header
     QHeaderView *horizontalHeader = ui->tableWidget->horizontalHeader();
     horizontalHeader->setStyleSheet("background-color: #ffffff; color: #000000;");
 
-    // Set the background color for the vertical header
     QHeaderView *verticalHeader = ui->tableWidget->verticalHeader();
     verticalHeader->setStyleSheet("background-color: #ffffff; color: #000000;");
 
-    loadFilter();
+    loadDefaults();
+    load("filter");
 
 
-    QTimer *timer = new QTimer();
+    timer = new QTimer();
 
-    timer->setInterval(2000);
+    timer->setInterval(1000);
     timer->setSingleShot(false);
 
-    connect(timer, &QTimer::timeout, [this]() {
-        count--;
-        if(count % 11 == 0) {loadStatus(0, 1, "good"); return;};
-        if(count % 9 == 0) {loadStatus(1, 1, "critical"); return;};
-        if(count % 7 == 0) {loadStatus(2, 1, "warning"); return;};
-        if(count % 5 == 0){loadStatus(3, 1, "critical"); return;};
-        loadStatus(3, 1, "critical");
-    });
+    connect(timer, &QTimer::timeout,this, &MainWindow::handleValueChange);
 
     timer->start();
 }
 
-void MainWindow::loadFilter(){
-    FilterModel filters;
-    QList<QString> filterList = filters.getFilterList();
+void MainWindow::load(QString type){
+    QList<FilterModel> filterList = FilterModel::filterList;
 
     int rowsCount = filterList.count();
     ui->tableWidget->setRowCount(rowsCount);
@@ -46,7 +44,7 @@ void MainWindow::loadFilter(){
     QString dateString = currentDate.toString("dd-MM-yyyy");
 
     for(int i=0; i<rowsCount; i++){
-        QTableWidgetItem *filterListItem =  new QTableWidgetItem(filterList[i]);
+        QTableWidgetItem *filterListItem =  new QTableWidgetItem(filterList[i].getFilterName());
         filterListItem->setTextAlignment(Qt::AlignCenter);
         ui->tableWidget->setItem(i,0,filterListItem);
 
@@ -58,8 +56,24 @@ void MainWindow::loadFilter(){
     }
 }
 
+void MainWindow::handleValueChange(){
+    if(count == 25) timer->stop();
+    QList<FilterModel>& filterList = FilterModel::filterList;
 
-void MainWindow::loadStatus(int row, int count, QString status){
+    for(int i=0; i<filterList.count(); i++){
+        filterList[i] = filterList[i].setFilterHealth(i+1);
+        int healthLevel = filterList[i].getFilterHealth();
+
+        if(healthLevel > 80) loadStatus(i, 1, "good");
+        else if(healthLevel > 50 && healthLevel < 80) loadStatus(i, 1, "warning");
+        else loadStatus(i, 1, "critical");
+    }
+
+    count--;
+}
+
+
+void MainWindow::loadStatus(int row, int column, QString status){
     QWidget *widget = new QWidget();
     QHBoxLayout *hBoxLayout = new QHBoxLayout();
     QLabel *label1 = new QLabel();
@@ -67,12 +81,12 @@ void MainWindow::loadStatus(int row, int count, QString status){
     hBoxLayout->addWidget(label1);
     hBoxLayout->addWidget(label2);
     widget->setLayout(hBoxLayout);
-    ui->tableWidget->setCellWidget(row, count, widget);
+    ui->tableWidget->setCellWidget(row, column, widget);
 
     int width = 25;
     int height = 25;
 
-     label1->setFixedSize(width, height);
+    label1->setFixedSize(width, height);
 
     if(status == "good"){
         QPixmap pixmap(":/images/Resources/check.png");
@@ -114,3 +128,9 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_radioButton_toggled(bool checked)
+{
+
+}
+
