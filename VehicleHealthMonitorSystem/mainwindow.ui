@@ -74,12 +74,12 @@ color: rgb(255, 255, 254);</string>
      <rect>
       <x>20</x>
       <y>90</y>
-      <width>451</width>
-      <height>271</height>
+      <width>411</width>
+      <height>231</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QTableWidget" name="tableWidget">
@@ -148,10 +148,17 @@ color: &quot;#fffffe&quot;;</string>
         <x>20</x>
         <y>20</y>
         <width>411</width>
-        <height>221</height>
+        <height>231</height>
        </rect>
       </property>
       <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(114, 117, 126);
+color: &quot;#fffffe&quot;;</string>
+      </property>
+      <property name="alternatingRowColors">
        <bool>false</bool>
       </property>
       <property name="rowCount">

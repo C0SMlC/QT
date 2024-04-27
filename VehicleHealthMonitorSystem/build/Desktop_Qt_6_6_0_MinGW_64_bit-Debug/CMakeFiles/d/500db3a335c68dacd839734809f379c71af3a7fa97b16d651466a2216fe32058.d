@@ -528,6 +528,8 @@ VehicleHealthMonitorSystem_autogen/timestamp: \
   D:/QT/VehicleHealthMonitorSystem/CMakeLists.txt \
   D:/QT/VehicleHealthMonitorSystem/Models/filtermodel.cpp \
   D:/QT/VehicleHealthMonitorSystem/Models/filtermodel.h \
+  D:/QT/VehicleHealthMonitorSystem/Models/fluidmodel.cpp \
+  D:/QT/VehicleHealthMonitorSystem/Models/fluidmodel.h \
   .qtc/package-manager/auto-setup.cmake \
   CMakeFiles/3.27.7/CMakeCXXCompiler.cmake \
   CMakeFiles/3.27.7/CMakeRCCompiler.cmake \

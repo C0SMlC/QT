@@ -7,6 +7,12 @@ void loadDefaults(){
         FilterModel newFilter(filter);
         FilterModel::addFilterToList(newFilter);
     }
+
+    QList<QString> FluidList = {"Engine Air Fluid", "Cabin Air Fluid", "Oil Fluid", "Fuel Fluid"};
+    for(const auto& fluid : FluidList){
+        FluidModel newFluid(fluid);
+        FluidModel::addFluidToList(newFluid);
+    }
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -20,9 +26,17 @@ MainWindow::MainWindow(QWidget *parent)
     QHeaderView *verticalHeader = ui->tableWidget->verticalHeader();
     verticalHeader->setStyleSheet("background-color: #ffffff; color: #000000;");
 
-    loadDefaults();
-    load("filter");
+    QHeaderView *horizontalHeaderFluidTable = ui->tableWidget->horizontalHeader();
+    horizontalHeaderFluidTable->setStyleSheet("background-color: #ffffff; color: #000000;");
 
+    QHeaderView *verticalHeaderFluidTable = ui->tableWidget->verticalHeader();
+    verticalHeaderFluidTable->setStyleSheet("background-color: #ffffff; color: #000000;");
+
+    loadDefaults();
+
+    ui->stackedWidget->setCurrentWidget(ui->page);
+    load("filter");
+    load("fluid");
 
     timer = new QTimer();
 
@@ -35,24 +49,45 @@ MainWindow::MainWindow(QWidget *parent)
 }
 
 void MainWindow::load(QString type){
-    QList<FilterModel> filterList = FilterModel::filterList;
+    if(type == "filter"){
+        qDebug() << "in the function";
 
-    int rowsCount = filterList.count();
-    ui->tableWidget->setRowCount(rowsCount);
+        QList<FilterModel> filterList = FilterModel::filterList;
+        int rowsCount = filterList.count();
+        ui->tableWidget->setRowCount(rowsCount);
+        QDate currentDate = QDate::currentDate();
+        QString dateString = currentDate.toString("dd-MM-yyyy");
 
-    QDate currentDate = QDate::currentDate();
-    QString dateString = currentDate.toString("dd-MM-yyyy");
+        for(int i=0; i<rowsCount; i++){
+            qDebug() << filterList[i].getFilterName();
+            QTableWidgetItem *filterListItem =  new QTableWidgetItem(filterList[i].getFilterName());
+            filterListItem->setTextAlignment(Qt::AlignCenter);
+            ui->tableWidget->setItem(i,0,filterListItem);
 
-    for(int i=0; i<rowsCount; i++){
-        QTableWidgetItem *filterListItem =  new QTableWidgetItem(filterList[i].getFilterName());
-        filterListItem->setTextAlignment(Qt::AlignCenter);
-        ui->tableWidget->setItem(i,0,filterListItem);
+            QTableWidgetItem *dateTableItem = new QTableWidgetItem(dateString);
+            dateTableItem->setTextAlignment(Qt::AlignCenter);
+            ui->tableWidget->setItem(i,2,dateTableItem);
 
-        QTableWidgetItem *dateTableItem = new QTableWidgetItem(dateString);
-        dateTableItem->setTextAlignment(Qt::AlignCenter);
-        ui->tableWidget->setItem(i,2,dateTableItem);
+            loadStatus(i, 1, "good", "filter");
+        }
+    }else{
+        QList<FluidModel> fluidList = FluidModel::fluidList;
+        int rowsCount = fluidList.count();
+        ui->tableWidget_2->setRowCount(rowsCount);
+        QDate currentDate = QDate::currentDate();
+        QString dateString = currentDate.toString("dd-MM-yyyy");
 
-        loadStatus(i, 1, "good");
+        for(int i=0; i<rowsCount; i++){
+            QTableWidgetItem *filterListItem =  new QTableWidgetItem(fluidList[i].getFluidName());
+            filterListItem->setTextAlignment(Qt::AlignCenter);
+            ui->tableWidget_2->setItem(i,0,filterListItem);
+
+            QTableWidgetItem *dateTableItem = new QTableWidgetItem(dateString);
+            dateTableItem->setTextAlignment(Qt::AlignCenter);
+            ui->tableWidget_2->setItem(i,2,dateTableItem);
+
+            loadStatus(i, 1, "good", "fluid");
+        }
     }
 }
 
@@ -64,16 +99,16 @@ void MainWindow::handleValueChange(){
         filterList[i] = filterList[i].setFilterHealth(i+1);
         int healthLevel = filterList[i].getFilterHealth();
 
-        if(healthLevel > 80) loadStatus(i, 1, "good");
-        else if(healthLevel > 50 && healthLevel < 80) loadStatus(i, 1, "warning");
-        else loadStatus(i, 1, "critical");
+        if(healthLevel > 80) loadStatus(i, 1, "good", "filter");
+        else if(healthLevel > 50 && healthLevel < 80) loadStatus(i, 1, "warning", "filter");
+        else loadStatus(i, 1, "critical", "filter");
     }
 
     count--;
 }
 
 
-void MainWindow::loadStatus(int row, int column, QString status){
+void MainWindow::loadStatus(int row, int column, QString status, QString type){
     QWidget *widget = new QWidget();
     QHBoxLayout *hBoxLayout = new QHBoxLayout();
     QLabel *label1 = new QLabel();
@@ -81,7 +116,8 @@ void MainWindow::loadStatus(int row, int column, QString status){
     hBoxLayout->addWidget(label1);
     hBoxLayout->addWidget(label2);
     widget->setLayout(hBoxLayout);
-    ui->tableWidget->setCellWidget(row, column, widget);
+    if(type=="filter") ui->tableWidget->setCellWidget(row, column, widget);
+    else ui->tableWidget_2->setCellWidget(row, column, widget);
 
     int width = 25;
     int height = 25;
@@ -131,6 +167,13 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_radioButton_toggled(bool checked)
 {
+    if(ui->radioButton->isChecked()){
+        ui->stackedWidget->setCurrentWidget(ui->page);
+        // load("filter");
+    }
 
+    if(ui->radioButton_2->isChecked()){
+        ui->stackedWidget->setCurrentWidget(ui->page_2);
+    }
 }
 

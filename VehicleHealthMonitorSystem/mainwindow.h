@@ -8,6 +8,7 @@
 #include <QTimer>
 
 #include "filtermodel.h"
+#include "fluidmodel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -29,7 +30,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     void load(QString type);
-    void loadStatus(int row, int count, QString status);
+    void loadStatus(int row, int count, QString status, QString type);
     void handleValueChange();
     QTimer *timer;
     int count = 100;

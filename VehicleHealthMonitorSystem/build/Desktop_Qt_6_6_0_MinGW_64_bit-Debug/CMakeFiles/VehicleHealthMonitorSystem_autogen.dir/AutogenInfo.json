@@ -248,6 +248,12 @@
 			null
 		],
 		[
+			"D:/QT/VehicleHealthMonitorSystem/Models/fluidmodel.h",
+			"MU",
+			"25IR5XJDBU/moc_fluidmodel.cpp",
+			null
+		],
+		[
 			"D:/QT/VehicleHealthMonitorSystem/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -326,6 +332,7 @@
 	"SOURCES" : 
 	[
 		[ "D:/QT/VehicleHealthMonitorSystem/Models/filtermodel.cpp", "MU", null ],
+		[ "D:/QT/VehicleHealthMonitorSystem/Models/fluidmodel.cpp", "MU", null ],
 		[ "D:/QT/VehicleHealthMonitorSystem/main.cpp", "MU", null ],
 		[ "D:/QT/VehicleHealthMonitorSystem/mainwindow.cpp", "MU", null ]
 	],

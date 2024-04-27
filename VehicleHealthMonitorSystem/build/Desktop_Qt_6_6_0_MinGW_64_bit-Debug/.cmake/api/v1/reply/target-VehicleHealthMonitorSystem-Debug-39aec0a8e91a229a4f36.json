@@ -76,13 +76,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 67,
+				"line" : 68,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 49,
+				"line" : 50,
 				"parent" : 0
 			},
 			{
@@ -264,7 +264,7 @@
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 50,
+				"line" : 51,
 				"parent" : 0
 			}
 		]
@@ -377,7 +377,8 @@
 				1,
 				2,
 				6,
-				10
+				8,
+				12
 			]
 		}
 	],
@@ -502,7 +503,8 @@
 				1,
 				2,
 				6,
-				10
+				8,
+				12
 			]
 		},
 		{
@@ -511,7 +513,8 @@
 			[
 				3,
 				5,
-				8
+				7,
+				10
 			]
 		},
 		{
@@ -519,16 +522,16 @@
 			"sourceIndexes" : 
 			[
 				4,
-				7,
-				9
+				9,
+				11
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				11,
-				12
+				13,
+				14
 			]
 		}
 	],
@@ -572,6 +575,17 @@
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "Models/filtermodel.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "Models/fluidmodel.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "Models/fluidmodel.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
