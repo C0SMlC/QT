@@ -25,14 +25,17 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_radioButton_toggled(bool checked);
+    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;
     void load(QString type);
     void loadStatus(int row, int count, QString status, QString type);
-    void handleValueChange();
+    void handleFluidValueChange();
+    void handleFilterValueChange();
     QTimer *timer;
-    int count = 100;
+    int fluidCount = 100;
+    int filterCount = 100;
 };
 #endif // MAINWINDOW_H

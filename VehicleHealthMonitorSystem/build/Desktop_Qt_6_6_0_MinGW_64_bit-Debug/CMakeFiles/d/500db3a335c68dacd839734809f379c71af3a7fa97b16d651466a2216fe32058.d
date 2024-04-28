@@ -526,6 +526,8 @@ VehicleHealthMonitorSystem_autogen/timestamp: \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
   D:/QT/VehicleHealthMonitorSystem/CMakeLists.txt \
+  D:/QT/VehicleHealthMonitorSystem/FilterGoogleTest.cpp \
+  D:/QT/VehicleHealthMonitorSystem/FluidGoogleTest.cpp \
   D:/QT/VehicleHealthMonitorSystem/Models/filtermodel.cpp \
   D:/QT/VehicleHealthMonitorSystem/Models/filtermodel.h \
   D:/QT/VehicleHealthMonitorSystem/Models/fluidmodel.cpp \

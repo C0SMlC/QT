@@ -8,7 +8,7 @@ void loadDefaults(){
         FilterModel::addFilterToList(newFilter);
     }
 
-    QList<QString> FluidList = {"Engine Air Fluid", "Cabin Air Fluid", "Oil Fluid", "Fuel Fluid"};
+    QList<QString> FluidList = {"Engine Oil", "Hydraulic Oil", "Coolant Oil", "Fuel"};
     for(const auto& fluid : FluidList){
         FluidModel newFluid(fluid);
         FluidModel::addFluidToList(newFluid);
@@ -20,30 +20,30 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    this->setWindowTitle("Vehicle Health Monitor System");
+
     QHeaderView *horizontalHeader = ui->tableWidget->horizontalHeader();
-    horizontalHeader->setStyleSheet("background-color: #ffffff; color: #000000;");
+    horizontalHeader->setStyleSheet("background-color: #2962FF !important; color: #000000;");
 
-    QHeaderView *verticalHeader = ui->tableWidget->verticalHeader();
-    verticalHeader->setStyleSheet("background-color: #ffffff; color: #000000;");
-
-    QHeaderView *horizontalHeaderFluidTable = ui->tableWidget->horizontalHeader();
-    horizontalHeaderFluidTable->setStyleSheet("background-color: #ffffff; color: #000000;");
-
-    QHeaderView *verticalHeaderFluidTable = ui->tableWidget->verticalHeader();
-    verticalHeaderFluidTable->setStyleSheet("background-color: #ffffff; color: #000000;");
+    QHeaderView *horizontalHeaderFluidTable = ui->tableWidget_2->horizontalHeader();
+    horizontalHeaderFluidTable->setStyleSheet("background-color: #2962FF !important; color: #000000;");
 
     loadDefaults();
 
-    ui->stackedWidget->setCurrentWidget(ui->page);
-    load("filter");
+    ui->stackedWidget->setCurrentWidget(ui->page_2);
+
     load("fluid");
+    load("filter");
+
 
     timer = new QTimer();
 
     timer->setInterval(1000);
     timer->setSingleShot(false);
 
-    connect(timer, &QTimer::timeout,this, &MainWindow::handleValueChange);
+    connect(timer, &QTimer::timeout,this, &MainWindow::handleFluidValueChange);
+    connect(timer, &QTimer::timeout,this, &MainWindow::handleFilterValueChange);
 
     timer->start();
 }
@@ -91,12 +91,28 @@ void MainWindow::load(QString type){
     }
 }
 
-void MainWindow::handleValueChange(){
-    if(count == 25) timer->stop();
+void MainWindow::handleFluidValueChange(){
+    if(fluidCount == 25) timer->stop();
     QList<FilterModel>& filterList = FilterModel::filterList;
 
     for(int i=0; i<filterList.count(); i++){
         filterList[i] = filterList[i].setFilterHealth(i+1);
+        int healthLevel = filterList[i].getFilterHealth();
+
+        if(healthLevel > 80) loadStatus(i, 1, "good", "fluid");
+        else if(healthLevel > 50 && healthLevel < 80) loadStatus(i, 1, "warning", "fluid");
+        else loadStatus(i, 1, "critical", "fluid");
+    }
+
+    fluidCount--;
+}
+
+void MainWindow::handleFilterValueChange(){
+    if(filterCount == 25) timer->stop();
+    QList<FilterModel>& filterList = FilterModel::filterList;
+
+    for(int i=0; i<filterList.count(); i++){
+        filterList[i] = filterList[i].setFilterHealth((i/2)+1);
         int healthLevel = filterList[i].getFilterHealth();
 
         if(healthLevel > 80) loadStatus(i, 1, "good", "filter");
@@ -104,7 +120,7 @@ void MainWindow::handleValueChange(){
         else loadStatus(i, 1, "critical", "filter");
     }
 
-    count--;
+    filterCount--;
 }
 
 
@@ -165,15 +181,15 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_radioButton_toggled(bool checked)
-{
-    if(ui->radioButton->isChecked()){
-        ui->stackedWidget->setCurrentWidget(ui->page);
-        // load("filter");
-    }
 
-    if(ui->radioButton_2->isChecked()){
-        ui->stackedWidget->setCurrentWidget(ui->page_2);
-    }
+void MainWindow::on_pushButton_clicked()
+{
+     ui->stackedWidget->setCurrentWidget(ui->page_2);
+}
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+      ui->stackedWidget->setCurrentWidget(ui->page);
 }
 

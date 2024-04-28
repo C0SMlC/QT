@@ -1,0 +1,218 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-6831bf4ee7f4f96b8098.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "Models",
+					"jsonFile" : "directory-Models-Debug-86b32ee6a81dc9245fcb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Models",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"build" : "googletest",
+					"jsonFile" : "directory-googletest-Debug-294c64d4885f2a55f3f7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "googletest",
+					"targetIndexes" : 
+					[
+						8,
+						9
+					]
+				},
+				{
+					"build" : "googlemock",
+					"jsonFile" : "directory-googlemock-Debug-94c7c9094e79b07883ca.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "googlemock",
+					"targetIndexes" : 
+					[
+						6,
+						7
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "VehicleHealthMonitorSystem",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "gtest",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						8,
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "gmock",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "Models::@6005cbd7e229a64c4d31",
+					"jsonFile" : "target-Models-Debug-cee989c78e8be703517f.json",
+					"name" : "Models",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Models_autogen::@6005cbd7e229a64c4d31",
+					"jsonFile" : "target-Models_autogen-Debug-3396e58b568d01e48099.json",
+					"name" : "Models_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Models_autogen_timestamp_deps::@6005cbd7e229a64c4d31",
+					"jsonFile" : "target-Models_autogen_timestamp_deps-Debug-a54fa406dba1c57c004e.json",
+					"name" : "Models_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "VehicleHealthMonitorSystem::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-VehicleHealthMonitorSystem-Debug-a1200fb86ce0bfc00324.json",
+					"name" : "VehicleHealthMonitorSystem",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "VehicleHealthMonitorSystem_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-VehicleHealthMonitorSystem_autogen-Debug-b01095c1fe33a0615895.json",
+					"name" : "VehicleHealthMonitorSystem_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "VehicleHealthMonitorSystem_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-VehicleHealthMonitorSystem_autogen_timestamp_deps-Debug-41d5ad5ee169a078b8e3.json",
+					"name" : "VehicleHealthMonitorSystem_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gmock::@3cc487480d69f582359a",
+					"jsonFile" : "target-gmock-Debug-25d7b5e192e5d71cac85.json",
+					"name" : "gmock",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gmock_main::@3cc487480d69f582359a",
+					"jsonFile" : "target-gmock_main-Debug-d4dd613cd72d445376e1.json",
+					"name" : "gmock_main",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gtest::@b3026ea3adfb7c2366ee",
+					"jsonFile" : "target-gtest-Debug-a4ba45f5a6fcded2dcc8.json",
+					"name" : "gtest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gtest_main::@b3026ea3adfb7c2366ee",
+					"jsonFile" : "target-gtest_main-Debug-66cec992de11c2d94763.json",
+					"name" : "gtest_main",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/QT/VehicleHealthMonitorSystem/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug",
+		"source" : "D:/QT/VehicleHealthMonitorSystem"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

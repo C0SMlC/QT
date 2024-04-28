@@ -287,11 +287,15 @@
 	"MOC_INCLUDES" : 
 	[
 		"D:/QT/VehicleHealthMonitorSystem/Models",
+		"D:/QT/VehicleHealthMonitorSystem/googletest",
+		"D:/QT/VehicleHealthMonitorSystem/googlemock",
 		"C:/Qt/6.6.0/mingw_64/include/QtCore",
 		"C:/Qt/6.6.0/mingw_64/include",
 		"C:/Qt/6.6.0/mingw_64/mkspecs/win32-g++",
 		"C:/Qt/6.6.0/mingw_64/include/QtWidgets",
 		"C:/Qt/6.6.0/mingw_64/include/QtGui",
+		"D:/QT/VehicleHealthMonitorSystem/googletest/include",
+		"D:/QT/VehicleHealthMonitorSystem/googlemock/include",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward",
@@ -331,6 +335,8 @@
 	"SETTINGS_FILE" : "D:/QT/VehicleHealthMonitorSystem/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/VehicleHealthMonitorSystem_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "D:/QT/VehicleHealthMonitorSystem/FilterGoogleTest.cpp", "MU", null ],
+		[ "D:/QT/VehicleHealthMonitorSystem/FluidGoogleTest.cpp", "MU", null ],
 		[ "D:/QT/VehicleHealthMonitorSystem/Models/filtermodel.cpp", "MU", null ],
 		[ "D:/QT/VehicleHealthMonitorSystem/Models/fluidmodel.cpp", "MU", null ],
 		[ "D:/QT/VehicleHealthMonitorSystem/main.cpp", "MU", null ],

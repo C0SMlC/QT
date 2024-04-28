@@ -50,6 +50,8 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("D:/QT/VehicleHealthMonitorSystem/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Models/cmake_install.cmake")
+  include("D:/QT/VehicleHealthMonitorSystem/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/googletest/cmake_install.cmake")
+  include("D:/QT/VehicleHealthMonitorSystem/build/Desktop_Qt_6_6_0_MinGW_64_bit-Debug/googlemock/cmake_install.cmake")
 
 endif()
 

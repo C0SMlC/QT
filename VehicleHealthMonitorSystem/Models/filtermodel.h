@@ -9,7 +9,7 @@ class FilterModel:public QObject
     Q_OBJECT
 public:
     FilterModel(QString name, int healthLevel=100);
-    QList<FilterModel> getFilterList();
+    static QList<FilterModel> getFilterList();
     FilterModel(const FilterModel& other);
     FilterModel& operator=(const FilterModel& other);
 

@@ -19,6 +19,8 @@ int FluidModel::getFluidHealth() const {
 }
 
 FluidModel FluidModel::setFluidHealth(int num) {
+    if(num > this->healthLevel)  this->healthLevel = 0;
+
     if(this->healthLevel - num > 0) {
         this->healthLevel =  this->healthLevel - num;
     }

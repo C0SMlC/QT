@@ -10,6 +10,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(Models/)
+add_subdirectory(googletest/)
+add_subdirectory(googlemock/)
+
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
@@ -28,6 +31,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Models/filtermodel.h Models/filtermodel.cpp
         Models/fluidmodel.h Models/fluidmodel.cpp
         images.qrc
+        FilterGoogleTest.cpp
+        FluidGoogleTest.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET VehicleHealthMonitorSystem APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -47,8 +52,8 @@ else()
     endif()
 endif()
 
-target_link_libraries(VehicleHealthMonitorSystem PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
-target_include_directories(VehicleHealthMonitorSystem PRIVATE Models/)
+target_link_libraries(VehicleHealthMonitorSystem PRIVATE Qt${QT_VERSION_MAJOR}::Widgets gtest gmock)
+target_include_directories(VehicleHealthMonitorSystem PRIVATE Models/ googletest/ googlemock/)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

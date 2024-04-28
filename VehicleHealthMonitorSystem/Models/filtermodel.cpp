@@ -19,11 +19,11 @@ int FilterModel::getFilterHealth() const {
 }
 
 FilterModel FilterModel::setFilterHealth(int num) {
+    if(num > this->healthLevel) this->healthLevel = 0;
+
     if(this->healthLevel - num > 0) {
         this->healthLevel =  this->healthLevel - num;
     }
-
-    qDebug() << this->healthLevel;
     return *this;
 }
 
