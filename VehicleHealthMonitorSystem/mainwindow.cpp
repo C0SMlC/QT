@@ -24,10 +24,10 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowTitle("Vehicle Health Monitor System");
 
     QHeaderView *horizontalHeader = ui->tableWidget->horizontalHeader();
-    horizontalHeader->setStyleSheet("background-color: #2962FF !important; color: #000000;");
+    horizontalHeader->setStyleSheet("background-color: #2962FF; color: #263238;");
 
     QHeaderView *horizontalHeaderFluidTable = ui->tableWidget_2->horizontalHeader();
-    horizontalHeaderFluidTable->setStyleSheet("background-color: #2962FF !important; color: #000000;");
+    horizontalHeaderFluidTable->setStyleSheet("background-color: #2962FF; color: #263238;");
 
     loadDefaults();
 
